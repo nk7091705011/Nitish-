@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My 5 Page App</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+        nav {
+            background-color: #333;
+            display: flex;
+            justify-content: center;
+        }
+        nav button {
+            color: white;
+            background: none;
+            border: none;
+            padding: 12px 20px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        nav button:hover {
+            background-color: #555;
+        }
+        main {
+            padding: 20px;
+            text-align: center;
+        }
+        footer {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+        button.action {
+            padding: 10px 15px;
+            margin: 5px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button.action:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>My App</h1>
+</header>
+
+<nav>
+    <button onclick="showPage('home')">Home</button>
+    <button onclick="showPage('about')">About</button>
+    <button onclick="showPage('services')">Services</button>
+    <button onclick="showPage('gallery')">Gallery</button>
+    <button onclick="showPage('contact')">Contact</button>
+</nav>
+
+<main id="content">
+    <!-- Home Page by default -->
+    <h2>Home Page</h2>
+    <p>Welcome to the homepage of our app.</p>
+    <button class="action" onclick="alert('Welcome to My App!')">Click Me</button>
+</main>
+
+<footer>
+    <p>&copy; 2025 My App</p>
+</footer>
+
+<script>
+    function showPage(page) {
+        let content = document.getElementById('content');
+
+        if (page === 'home') {
+            content.innerHTML = `
+                <h2>Home Page</h2>
+                <p>Welcome to the homepage of our app.</p>
+                <button class="action" onclick="alert('Welcome to My App!')">Click Me</button>
+            `;
+        }
+        else if (page === 'about') {
+            content.innerHTML = `
+                <h2>About Us</h2>
+                <p>We are a team of developers creating amazing apps.</p>
+                <button class="action" onclick="alert('This is About Page!')">Know More</button>
+            `;
+        }
+        else if (page === 'services') {
+            content.innerHTML = `
+                <h2>Our Services</h2>
+                <p>We offer app development, web design, and more.</p>
+                <button class="action" onclick="alert('Our services include app and web development!')">View Services</button>
+            `;
+        }
+        else if (page === 'gallery') {
+            content.innerHTML = `
+                <h2>Gallery</h2>
+                <p>Check out our latest app screenshots and designs.</p>
+                <button class="action" onclick="alert('Gallery Images Coming Soon!')">See Gallery</button>
+            `;
+        }
+        else if (page === 'contact') {
+            content.innerHTML = `
+                <h2>Contact Us</h2>
+                <p>Email: contact@myapp.com</p>
+                <button class="action" onclick="alert('Contact Form Coming Soon!')">Send Message</button>
+            `;
+        }
+    }
+</script>
+
+</body>
+</html>
